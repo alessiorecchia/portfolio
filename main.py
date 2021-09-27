@@ -6,29 +6,29 @@ from util.db import read_db,write_project,find_project_by_id,find_project_by_id_
 # from util.app_project import create_project, get_projects, get_projects_by_id, update_project_by_id, delete_project_by_id
 app = Flask(__name__)
 
-# app.config["UPLOAD_FOLDER"]="files"
+app.config["UPLOAD_FOLDER"]="files"
 
 @app.route("/")
 def index():
-    # About = about_db()
+    About = about_db()
     return render_template('/views/home.html',APP_NAME=APP_NAME,MENU_ITEMS=MENU_ITEMS,SOCIAL_LINKS=SOCIAL_LINKS,MY_PROJECTS=MY_PROJECTS,About=About)
  
-# @app.route("/dashboard")
-# def dashboard():
-#     return  render_template("/views/dashboard/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU)
+@app.route("/dashboard")
+def dashboard():
+    return  render_template("/views/dashboard/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU)
 
 
-# @app.route("/dashboard/files",methods=["GET","POST"])
-# def files():
-#     if request.method=="POST":
-#         file = request.files["file"]
-#         filename = secure_filename(file.filename)
-#         file.save(os.path.join(app.config["UPLOAD_FOLDER"],filename))
-#         return redirect(url_for("files"))
-#        # FİLE UPLOAD
-#     else:
-#         files = os.listdir(os.path.join(app.config["UPLOAD_FOLDER"]))
-#         return render_template("/views/files/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU,files=files)
+@app.route("/dashboard/files",methods=["GET","POST"])
+def files():
+    if request.method=="POST":
+        file = request.files["file"]
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config["UPLOAD_FOLDER"],filename))
+        return redirect(url_for("files"))
+       # FİLE UPLOAD
+    else:
+        files = os.listdir(os.path.join(app.config["UPLOAD_FOLDER"]))
+        return render_template("/views/files/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU,files=files)
 
 
 
@@ -133,28 +133,28 @@ def index():
 #         return render_template("/views/projects/new.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU)
 
 
-# @app.route("/dashboard/files/<string:filename>",methods=["GET","POST"])
-# def file_actions(filename):
-#     file_path = os.path.join(app.config["UPLOAD_FOLDER"],filename)
-#     if request.method=="POST":
-#         os.remove(file_path)
-#         return redirect(url_for("files"))
-#     else:
-#         return send_from_directory(path=app.root_path,directory=app.config["UPLOAD_FOLDER"],filename=filename)
+@app.route("/dashboard/files/<string:filename>",methods=["GET","POST"])
+def file_actions(filename):
+    file_path = os.path.join(app.config["UPLOAD_FOLDER"],filename)
+    if request.method=="POST":
+        os.remove(file_path)
+        return redirect(url_for("files"))
+    else:
+        return send_from_directory(path=app.root_path,directory=app.config["UPLOAD_FOLDER"],filename=filename)
 
-# @app.route("/dashboard/about", methods=["GET", "POST"])
-# def about():
-#     return render_template("/views/about/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU)
+@app.route("/dashboard/about", methods=["GET", "POST"])
+def about():
+    return render_template("/views/about/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU)
 
-# @app.route("/dashboard/modify_about", methods=["GET", "POST"])
-# def get_about():
-#     if request.method == "GET":
-#         about = about_db()
-#         return render_template("/views/about/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU,About=about)
-#     else:
-#         text = request.form.get("About")
-#         write_about(text)
-#         return redirect(url_for("about"))
+@app.route("/dashboard/modify_about", methods=["GET", "POST"])
+def get_about():
+    if request.method == "GET":
+        about = about_db()
+        return render_template("/views/about/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU,About=about)
+    else:
+        text = request.form.get("About")
+        write_about(text)
+        return redirect(url_for("about"))
 
 
 # @app.route("/dashboard/save_about", methods=["GET", "POST"])
