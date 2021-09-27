@@ -2,7 +2,7 @@ from flask import Flask,render_template,request,redirect,url_for,send_from_direc
 from constants.items import *
 import os
 from werkzeug.utils import secure_filename
-from util.db import read_db,write_project,find_project_by_id,find_project_by_id_and_delete, about_db, write_about
+# from util.db import read_db,write_project,find_project_by_id,find_project_by_id_and_delete, about_db, write_about
 # from util.app_project import create_project, get_projects, get_projects_by_id, update_project_by_id, delete_project_by_id
 app = Flask(__name__)
 
@@ -10,8 +10,8 @@ app.config["UPLOAD_FOLDER"]="files"
 
 @app.route("/")
 def index():
-    About = about_db()
-    return render_template('/views/home.html',APP_NAME=APP_NAME,MENU_ITEMS=MENU_ITEMS,SOCIAL_LINKS=SOCIAL_LINKS,MY_PROJECTS=MY_PROJECTS,About=About)
+    # About = about_db()
+    return render_template('/views/home.html',APP_NAME=APP_NAME,MENU_ITEMS=MENU_ITEMS,SOCIAL_LINKS=SOCIAL_LINKS,MY_PROJECTS=MY_PROJECTS)
  
 @app.route("/dashboard")
 def dashboard():
@@ -149,11 +149,11 @@ def about():
 @app.route("/dashboard/modify_about", methods=["GET", "POST"])
 def get_about():
     if request.method == "GET":
-        about = about_db()
-        return render_template("/views/about/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU,About=about)
+        # about = about_db()
+        return render_template("/views/about/index.html",APP_NAME=APP_NAME,DASHBOARD_MENU=DASHBOARD_MENU)
     else:
         text = request.form.get("About")
-        write_about(text)
+        # write_about(text)
         return redirect(url_for("about"))
 
 
