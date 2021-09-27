@@ -16,11 +16,11 @@ SOCIAL_LINKS = [{
 
 MY_PROJECTS = [
     {
-        "title":"Project A",
-        "description":"Project A description",
-        "cover":"https://analyticsindiamag.com/wp-content/uploads/2021/04/aim_openCV.png",
-        "liveLink":"https://github.com",
-        "githubLink":"https://github.com"
+        "title":"Curiosity is all You need",
+        "description":"Capstone project for Strive graduation",
+        "cover":"https://github.com/alessiorecchia/curiosity_ai/blob/main/gifs/04.gif",
+        "liveLink":"https://github.com/alessiorecchia/curiosity_ai",
+        "githubLink":"https://github.com/alessiorecchia/curiosity_ai"
     },
      {
         "title":"Project B",
