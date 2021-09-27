@@ -18,21 +18,21 @@ MY_PROJECTS = [
     {
         "title":"Curiosity is all You need",
         "description":"Capstone project for Strive graduation",
-        "cover":"https://github.com/alessiorecchia/curiosity_ai/blob/main/gifs/04.gif",
+        "cover":"static/assets/04.gif",
         "liveLink":"https://github.com/alessiorecchia/curiosity_ai",
         "githubLink":"https://github.com/alessiorecchia/curiosity_ai"
     },
      {
-        "title":"Project B",
-        "description":"Project B description",
-        "cover":"http://placehold.it/300x300",
-        "liveLink":"https://github.com",
-        "githubLink":"https://github.com"
+        "title":"Read me something short",
+        "description":"A team project we did during NLP builweek",
+        "cover":"https://uploads-ssl.webflow.com/5f57aae9cf84e83399ba0032/614b01f72efc8269c5deb793_strive-school-api-audio-aflorithmic.gif",
+        "liveLink":"https://www.aflorithmic.ai/post/why-strive-school-uses-api-audio",
+        "githubLink":"https://github.com/Read-me-something-short/the_magic"
     },
     {
-        "title":"Project C",
-        "description":"Project C description",
-        "cover":"http://placehold.it/300x300",
+        "title":"Feed the Doggo",
+        "description":"A team project we did during Computer Vision builweek",
+        "cover":"http://placehold.it/300x300?text=Coming+Soon",
         "liveLink":"https://github.com",
         "githubLink":"https://github.com"
     }

@@ -1,9 +1,10 @@
 {%macro SingleProjectComponent(project)%}
-<div class="col h-100">
-    <div class="card">
+<div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
       <img src="{{project['cover']}}" class="card-img-top project-cover" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{project['title']}}</h5>
+        <h4 class="card-title">{{project['title']}}</h4>
+
         <p class="card-text">{{project['description']}}</p>
       </div>
       <div class="card-footer d-flex justify-content-end">
