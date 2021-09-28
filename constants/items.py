@@ -32,7 +32,7 @@ MY_PROJECTS = [
     {
         "title":"Feed the Doggo",
         "description":"A team project we did during Computer Vision builweek",
-        "cover":"http://placehold.it/300x300?text=Coming+Soon",
+        "cover":"static/assets/coming_soon.png",
         "liveLink":"https://github.com",
         "githubLink":"https://github.com"
     }
