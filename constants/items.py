@@ -32,9 +32,9 @@ MY_PROJECTS = [
     {
         "title":"Feed the Doggo",
         "description":"A team project we did during Computer Vision builweek",
-        "cover":"static/assets/coming_soon.png",
-        "liveLink":"https://github.com",
-        "githubLink":"https://github.com"
+        "cover":"static/assets/demo.gif",
+        "liveLink":"https://www.youtube.com/watch?v=Aj7DsQnBY7c",
+        "githubLink":"https://github.com/Let-s-get-visual/Feed_the_doggo"
     }
 ]
 
