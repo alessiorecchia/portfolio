@@ -1,7 +1,8 @@
 {%macro SingleProjectComponent(project)%}
 <div class="col-sm-4">
     <div class="card" style="width: 18rem;">
-      <img src="{{project['cover']}}" class="card-img-top project-cover" alt="...">
+      <a href="{{project['liveLink']}}" target="blank_">
+      <img src="{{project['cover']}}" class="card-img-top project-cover" alt="..."></a>
       <div class="card-body">
         <h4 class="card-title">{{project['title']}}</h4>
 
